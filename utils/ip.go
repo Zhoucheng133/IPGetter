@@ -17,10 +17,7 @@ func GetIPv4(c *gin.Context) {
 		return
 	}
 	body, _ := io.ReadAll(resp.Body)
-	c.JSON(200, gin.H{
-		"ok":      true,
-		"content": string(body),
-	})
+	c.String(200, string(body))
 }
 
 func GetIPv6(c *gin.Context) {
@@ -33,8 +30,5 @@ func GetIPv6(c *gin.Context) {
 		return
 	}
 	body, _ := io.ReadAll(resp.Body)
-	c.JSON(200, gin.H{
-		"ok":      true,
-		"content": string(body),
-	})
+	c.String(200, string(body))
 }

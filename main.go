@@ -8,7 +8,8 @@ import (
 
 func main() {
 	r := gin.New()
-	r.GET("/api/ipv4", utils.GetIPv4)
-	r.GET("/api/ipv6", utils.GetIPv6)
+	gin.SetMode(gin.ReleaseMode)
+	r.GET("/ipv4", utils.GetIPv4)
+	r.GET("/ipv6", utils.GetIPv6)
 	r.Run(":1234")
 }
